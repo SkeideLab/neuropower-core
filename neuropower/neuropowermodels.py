@@ -498,7 +498,7 @@ def generate_figure(peak_df, params, method='RFT'):
     x = np.linspace(x_min, x_max, 100)
     y_a = (pi1 * beta.pdf(x, a=a, b=1)) + 1 - pi1
 
-    axes[0].hist(p_values, bins=np.arange(0,1.1,0.1), normed=True, alpha=0.6,
+    axes[0].hist(p_values, bins=np.arange(0,1.1,0.1), alpha=0.6,
                  label='observed distribution')
     axes[0].axhline(1-pi1, color='g', lw=5, alpha=0.6, label='null distribution')
     axes[0].plot(x, y_a, 'r-', lw=5, alpha=0.6, label='alternative distribution')
@@ -518,7 +518,7 @@ def generate_figure(peak_df, params, method='RFT'):
 
     # Z-values
     y, _, _ = axes[1].hist(z_values, bins=np.arange(min(z_values), 30, 0.3),
-                           normed=True, alpha=0.6, label='observed distribution')
+                            alpha=0.6, label='observed distribution')
     x_min, x_max = np.floor(np.min(z_values)), np.ceil(np.max(z_values))
     y_max = np.ceil(y.max())
 
